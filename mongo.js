@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // MongoDB connection setup
-const url = 'mongodb://localhost:27017'; // Replace with your MongoDB server URL
-const dbName = 'your-database-name'; // Replace with your database name
+const url = 'mongodb://localhost:27017'; 
+const dbName = 'dbtest'; 
 
 const client = new MongoClient(url, { useUnifiedTopology: true });
 
@@ -120,7 +120,7 @@ app.get('/products', (req, res) => {
       res.json({ message: 'Product deleted successfully' });
     }
   });
-// ... Add other routes (e.g., POST, PUT, DELETE) for MongoDB operations
+
 
 // Error handling middleware
 const errorHandlingMiddleware = (err, req, res, next) => {
